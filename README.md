@@ -25,13 +25,29 @@ Through an interactive web interface, you will face 10 levels with non-functioni
 Networking concepts studied in this project:  
 
 ### 1. Basic Networking Concepts
-- Definition of a computer network.  
-- Main devices: hosts, routers, switches.  
-- Network topologies: star, bus, ring, mesh.  
-- Difference between LAN (local area network) and WAN (wide area network).  
+
+- **Computer network**  
+  A set of interconnected devices that share resources and exchange information using communication protocols.
+
+- **Main devices**  
+  - **Hosts**: End-user devices such as computers, servers, or smartphones that generate and consume data.  
+  - **Routers**: Devices that forward packets between different networks and provide Internet connectivity.  
+  - **Switches**: Devices that connect multiple hosts within the same local network and manage internal traffic.
+
+- **Network topologies**  
+  - **Star**: All devices connect to a central hub or switch.  
+  - **Bus**: A single shared communication line connects all devices.  
+  - **Ring**: Each device connects to the next, forming a closed loop.  
+  - **Mesh**: Devices are interconnected with multiple paths, providing redundancy and reliability.
+
+- **LAN vs WAN**  
+  - **LAN (Local Area Network)**: A small-scale network limited to a specific location (home, office). High speed and low cost.  
+  - **WAN (Wide Area Network)**: A large-scale network that connects multiple LANs across wide geographic areas (e.g., the Internet). Lower speed compared to LAN and more complex infrastructure.
+
+---
 
 ### 2. IP Addressing
-- IPv4: 32-bit addresses written in dotted decimal format (e.g., `192.168.1.1`).  
+- **IPv4**: 32-bit addresses written in dotted decimal format (e.g., `192.168.1.1`).  
 
 #### IPv4 Address Classes
 
@@ -96,25 +112,56 @@ Networking concepts studied in this project:
 | /25  | 255.255.255.128   | 126              | 128        | 192.168.143.0         | 192.168.143.1       | 192.168.143.126     | 192.168.143.127     |
 | /24  | 255.255.255.0     | 254              | 256        | 192.168.143.0         | 192.168.143.1       | 192.168.143.254     | 192.168.143.255     |
 
+---
 
 ### 4. Gateways and Routing
-- Default gateway: exit point from local network to other networks.  
-- Switch vs router:  
-  - Switch → connects devices within the same network.  
-  - Router → connects different networks.  
-- Routing tables and inter-subnet communication.  
+
+- **Default gateway**  
+  The device that serves as the exit point from a local network to other networks, typically a router.
+
+- **Switch vs Router**  
+  - **Switch**: Connects multiple devices within the same local network and forwards traffic based on MAC addresses.  
+  - **Router**: Connects different networks together and forwards traffic based on IP addresses.
+
+- **Routing tables and inter-subnet communication**  
+  Routers maintain routing tables that define paths to different networks. These tables enable communication between subnets and ensure packets reach their correct destination.
+
+---
 
 ### 5. Communication Protocols
-- TCP/IP model: Application, Transport, Network, Link.  
-- OSI model: 7 layers and correspondence with TCP/IP.  
-- ARP: resolves IP ↔ MAC addresses.  
-- ICMP: diagnostic protocol (ping, traceroute).  
+
+- **TCP/IP model**  
+  A four-layer model: Application, Transport, Network, and Link. It is the foundation of Internet communication.
+
+- **OSI model**  
+  A seven-layer conceptual model (Physical, Data Link, Network, Transport, Session, Presentation, Application) that maps closely to the TCP/IP model.
+
+- **ARP (Address Resolution Protocol)**  
+  Resolves IP addresses into MAC addresses so devices can communicate on a local network.
+
+- **ICMP (Internet Control Message Protocol)**  
+  Used for diagnostics and error reporting. Common tools like `ping` and `traceroute` rely on ICMP.
+
+---
 
 ### 6. Network Configuration
-- Static vs dynamic IP assignment (DHCP).  
-- Configuring IP, subnet mask, and gateway.  
-- Common errors: invalid IP, wrong mask, missing gateway.  
-- Logs for troubleshooting.  
+
+- **Static vs dynamic IP assignment**  
+  - **Static**: IP addresses are manually configured and remain fixed.  
+  - **Dynamic (DHCP)**: IP addresses are automatically assigned by a DHCP server.
+
+- **Configuring IP, subnet mask, and gateway**  
+  Proper configuration ensures devices can communicate within the subnet and reach external networks.
+
+- **Common errors**  
+  - Invalid IP address (outside the subnet range).  
+  - Incorrect subnet mask (causing devices to appear in different networks).  
+  - Missing or wrong gateway (preventing external communication).
+
+- **Logs for troubleshooting**  
+  System and network logs help identify misconfigurations, connectivity issues, and routing errors.
+
+---
 
 Recommended documentation:  
 - [RFC 791 – Internet Protocol](https://www.rfc-editor.org/rfc/rfc791)  

@@ -32,9 +32,6 @@ Networking concepts studied in this project:
 
 ### 2. IP Addressing
 - IPv4: 32-bit addresses written in dotted decimal format (e.g., `192.168.1.1`).  
-- Address classes: A, B, C, D, E.  
-- Private vs public addresses.  
-- Special addresses: loopback (`127.0.0.1`), broadcast, network address.  
 
 #### IPv4 Address Classes
 
@@ -46,6 +43,27 @@ Networking concepts studied in this project:
 | D     | 1110xxxx     | 224 – 239            | N/A                 | N/A                | N/A               | Multicast groups (specialized communication)    |
 | E     | 1111xxxx     | 240 – 255            | N/A                 | N/A                | N/A               | Experimental / reserved (not used in practice)  |
 
+#### IPv4 Private and Public Address Ranges
+
+| Type    | Range                          | CIDR Notation | Typical Use                                         |
+|---------|--------------------------------|---------------|-----------------------------------------------------|
+| Private | 10.0.0.0 – 10.255.255.255      | 10.0.0.0/8    | Large private networks (corporate, ISP labs)        |
+| Private | 172.16.0.0 – 172.31.255.255    | 172.16.0.0/12 | Medium private networks (universities, enterprises) |
+| Private | 192.168.0.0 – 192.168.255.255  | 192.168.0.0/16| Small private networks (home, office LANs)          |
+| Public  | All other ranges               | N/A           | Routable on the Internet                            |
+
+#### IPv4 Special Address Ranges
+
+| Address / Range                    | CIDR Notation  | Purpose / Description                                  |
+|------------------------------------|----------------|--------------------------------------------------------|
+| 127.0.0.0 – 127.255.255.255        | 127.0.0.0/8    | Loopback (localhost, internal testing)                 |
+| 0.0.0.0                            | N/A            | Default route / “any address”                          |
+| 255.255.255.255                    | N/A            | Limited broadcast (to all hosts in local network)      |
+| x.x.x.0                            | N/A            | Network address (identifies the subnet itself)         |
+| x.x.x.255 (last address in subnet) | N/A            | Broadcast address (to all hosts in that subnet)        |
+| 169.254.0.0 – 169.254.255.255      | 169.254.0.0/16 | Link-local (APIPA, automatic assignment if DHCP fails) |
+
+---
 
 ### 3. Subnetting
 - Subnet mask: defines network vs host portion (e.g., `255.255.255.0`).  
@@ -77,7 +95,6 @@ Networking concepts studied in this project:
 | /26  | 255.255.255.192   | 62               | 64         | 192.168.143.0         | 192.168.143.1       | 192.168.143.62      | 192.168.143.63      |
 | /25  | 255.255.255.128   | 126              | 128        | 192.168.143.0         | 192.168.143.1       | 192.168.143.126     | 192.168.143.127     |
 | /24  | 255.255.255.0     | 254              | 256        | 192.168.143.0         | 192.168.143.1       | 192.168.143.254     | 192.168.143.255     |
-
 
 
 ### 4. Gateways and Routing

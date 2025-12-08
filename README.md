@@ -36,10 +36,49 @@ Networking concepts studied in this project:
 - Private vs public addresses.  
 - Special addresses: loopback (`127.0.0.1`), broadcast, network address.  
 
+#### IPv4 Address Classes
+
+| Class | Leading Bits | Range of First Octet | Default Subnet Mask | Networks Available | Hosts per Network | Typical Use                                     |
+|-------|--------------|----------------------|---------------------|--------------------|-------------------|-------------------------------------------------|
+| A     | 0xxxxxxx     | 0 – 127              | 255.0.0.0 (/8)      | 128                | ~16 million       | Very large networks (ISPs, big organizations)   |
+| B     | 10xxxxxx     | 128 – 191            | 255.255.0.0 (/16)   | 16,384             | ~65,000           | Medium-sized networks (universities, companies) |
+| C     | 110xxxxx     | 192 – 223            | 255.255.255.0 (/24) | 2,097,152          | 254               | Small networks (home, office LANs)              |
+| D     | 1110xxxx     | 224 – 239            | N/A                 | N/A                | N/A               | Multicast groups (specialized communication)    |
+| E     | 1111xxxx     | 240 – 255            | N/A                 | N/A                | N/A               | Experimental / reserved (not used in practice)  |
+
+
 ### 3. Subnetting
 - Subnet mask: defines network vs host portion (e.g., `255.255.255.0`).  
 - CIDR notation: `/8`, `/16`, `/24`.  
-- Calculations: network address, broadcast address, valid host range, number of hosts.  
+- Calculations: network address, broadcast address, valid host range, number of hosts. 
+
+#### Subnetting Reference Table
+
+**Example Calculation:**
+
+- Mask: `255.255.255.224`  
+- Binary form: `11111111.11111111.11111111.11100000`  
+- Count the bits set to 1 → `8 + 8 + 8 + 3 = 27` → CIDR `/27`  
+- Block size: `256 - 224 = 32` → each subnet has 32 addresses  
+- Valid hosts: `32 - 2 = 30` (subtract network and broadcast)  
+- Example subnet: `192.168.143.192/27`  
+  - Network address: `192.168.143.192`  
+  - Broadcast address: `192.168.143.223`  
+  - Usable host range: `192.168.143.193 – 192.168.143.222`
+
+**Reference Table:**
+
+| CIDR | Subnet Mask       | Hosts per Subnet | Block Size | Example Network       | First Usable IP     | Last Usable IP      | Broadcast Address   |
+|------|-------------------|------------------|------------|-----------------------|---------------------|---------------------|---------------------|
+| /30  | 255.255.255.252   | 2                | 4          | 192.168.143.0         | 192.168.143.1       | 192.168.143.2       | 192.168.143.3       |
+| /29  | 255.255.255.248   | 6                | 8          | 192.168.143.0         | 192.168.143.1       | 192.168.143.6       | 192.168.143.7       |
+| /28  | 255.255.255.240   | 14               | 16         | 192.168.143.0         | 192.168.143.1       | 192.168.143.14      | 192.168.143.15      |
+| /27  | 255.255.255.224   | 30               | 32         | 192.168.143.0         | 192.168.143.1       | 192.168.143.30      | 192.168.143.31      |
+| /26  | 255.255.255.192   | 62               | 64         | 192.168.143.0         | 192.168.143.1       | 192.168.143.62      | 192.168.143.63      |
+| /25  | 255.255.255.128   | 126              | 128        | 192.168.143.0         | 192.168.143.1       | 192.168.143.126     | 192.168.143.127     |
+| /24  | 255.255.255.0     | 254              | 256        | 192.168.143.0         | 192.168.143.1       | 192.168.143.254     | 192.168.143.255     |
+
+
 
 ### 4. Gateways and Routing
 - Default gateway: exit point from local network to other networks.  

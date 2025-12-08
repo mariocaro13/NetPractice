@@ -133,11 +133,64 @@ Networking concepts studied in this project:
 - **TCP/IP model**  
   A four-layer model: Application, Transport, Network, and Link. It is the foundation of Internet communication.
 
+	- **Application layer**: Provides services directly to the user (web, email, file transfer).  
+  	- **Transport layer**: Ensures data delivery between applications.  
+    	- **TCP (Transmission Control Protocol)**: Establishes a connection, divides data into numbered segments, waits for acknowledgments (ACK), and retransmits lost segments. This guarantees reliable and 	ordered delivery.  
+    	- **UDP (User Datagram Protocol)**: Sends data without acknowledgments. It is faster but does not guarantee delivery or order.  
+  	- **Network layer**: Handles logical addressing and routing using IP addresses, deciding how packets travel between networks.  
+  	- **Link layer**: Deals with physical transmission over the local medium (Ethernet, Wi-Fi).
+
+		#### TCP (Transmission Control Protocol)
+
+		TCP is a transport-layer protocol designed to ensure reliable communication between two devices.  
+		Its operation is based on the following mechanisms:
+
+		1. **Connection establishment (Three-way handshake)**  
+		   - The client sends a `SYN` message to request a connection.  
+		   - The server replies with `SYN-ACK` to acknowledge and accept.  
+		   - The client responds with `ACK`, and the connection is established.  
+		   This process guarantees that both sides are ready before data transmission begins.
+
+		2. **Data segmentation and numbering**  
+		   - Large data is divided into smaller segments.  
+		   - Each segment is assigned a sequence number.  
+		   - This allows the receiver to reassemble the data in the correct order.
+
+		3. **Acknowledgments (ACKs)**  
+		   - For every segment received, the receiver sends back an acknowledgment.  
+		   - If the sender does not receive an ACK, it retransmits the segment.  
+		   This ensures that no data is lost.
+
+		4. **Flow control**  
+		   - TCP uses a "window size" to control how much data can be sent before requiring an acknowledgment.  
+		   - This prevents overwhelming the receiver.
+
+		5. **Error detection**  
+		   - Each segment includes a checksum.  
+		   - If the checksum does not match, the segment is discarded and retransmitted.  
+		   This guarantees data integrity.
+
+		6. **Connection termination**  
+		   - When communication ends, both sides exchange `FIN` and `ACK` messages to close the connection gracefully.  
+		   - This ensures that all data has been delivered before the connection is released.
+
+		**Summary:**  
+		TCP works by establishing a connection, sending data in numbered segments, waiting for acknowledgments, retransmitting lost data, and closing the connection cleanly. It guarantees that information 	arrives 	complete, correct, and in order.
+
+
 - **OSI model**  
   A seven-layer conceptual model (Physical, Data Link, Network, Transport, Session, Presentation, Application) that maps closely to the TCP/IP model.
 
+  - **Physical**: Transmits raw bits over cables or wireless signals.  
+  - **Data Link**: Packages bits into frames and manages access to the physical medium using MAC addresses.  
+  - **Network**: Provides logical addressing and routing (IP).  
+  - **Transport**: Ensures reliable or fast delivery of data between applications (TCP/UDP).  
+  - **Session**: Establishes, manages, and terminates communication sessions.  
+  - **Presentation**: Translates, encrypts, or compresses data for the Application layer.  
+  - **Application**: Interfaces directly with user applications and services.
+
 - **ARP (Address Resolution Protocol)**  
-  Resolves IP addresses into MAC addresses so devices can communicate on a local network.
+  ARP is used within local networks to map an IP address to a physical MAC address. It ensures that devices can locate each other on the same subnet and allows data to be delivered to the correct hardware interface.
 
 - **ICMP (Internet Control Message Protocol)**  
   Used for diagnostics and error reporting. Common tools like `ping` and `traceroute` rely on ICMP.

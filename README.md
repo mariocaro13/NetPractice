@@ -138,13 +138,12 @@ Networking concepts studied in this project:
     	- **TCP (Transmission Control Protocol)**: Establishes a connection, divides data into numbered segments, waits for acknowledgments (ACK), and retransmits lost segments. This guarantees reliable and 	ordered delivery.  
     	- **UDP (User Datagram Protocol)**: Sends data without acknowledgments. It is faster but does not guarantee delivery or order.  
   	- **Network layer**: Handles logical addressing and routing using IP addresses, deciding how packets travel between networks.  
-  	- **Link layer**: Deals with physical transmission over the local medium (Ethernet, Wi-Fi).
+  	- **Link layer**: Deals with physical transmission over the local medium (Ethernet, Wi-Fi).  
 
-	> [!NOTE]
-	> #### TCP (Transmission Control Protocol)
-	> 
-	> TCP is a transport-layer protocol designed to ensure reliable communication between two devices.  
-	> Its operation is based on the following mechanisms:
+> [!NOTE]
+> #### TCP (Transmission Control Protocol)
+> TCP is a transport-layer protocol designed to ensure reliable communication between two devices.
+> Its operation is based on the following mechanisms:
 	> 
 	> 1. **Connection establishment (Three-way handshake)**  
 	>    - The client sends a `SYN` message to request a connection.  

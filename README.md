@@ -142,41 +142,42 @@ Networking concepts studied in this project:
 
 	> [!NOTE]
 	> #### TCP (Transmission Control Protocol)
-	>
-	>TCP is a transport-layer protocol designed to ensure reliable communication between two devices.  
-	>Its operation is based on the following mechanisms:
-	>
-	>1. **Connection establishment (Three-way handshake)**  
-	>   - The client sends a `SYN` message to request a connection.  
-	>   - The server replies with `SYN-ACK` to acknowledge and accept.  
-	>   - The client responds with `ACK`, and the connection is established.  
-	>   This process guarantees that both sides are ready before data transmission begins.
-	>
-	>2. **Data segmentation and numbering**  
-	>   - Large data is divided into smaller segments.  
-	>   - Each segment is assigned a sequence number.  
-	>   - This allows the receiver to reassemble the data in the correct order.  
-	>
-	>3. **Acknowledgments (ACKs)**  
-	>   - For every segment received, the receiver sends back an acknowledgment.  
-	>   - If the sender does not receive an ACK, it retransmits the segment.  
-	>   This ensures that no data is lost.  
-	>
-	>4. **Flow control**  
-	>   - TCP uses a "window size" to control how much data can be sent before requiring an acknowledgment.  
-	>   - This prevents overwhelming the receiver.
-	>5. **Error detection**  
-	>
-	>   - Each segment includes a checksum.  
-	>   - If the checksum does not match, the segment is discarded and retransmitted.  
-	>   This guarantees data integrity.
-	>6. **Connection termination**  
-	>
-	>   - When communication ends, both sides exchange `FIN` and `ACK` messages to close the connection gracefully.  
-	>   - This ensures that all data has been delivered before the connection is released.
-	>
-	>**Summary:**  
-	>TCP works by establishing a connection, sending data in numbered segments, waiting for acknowledgments, retransmitting lost data, and closing the connection cleanly. It guarantees that information >arrives 	complete, correct, and in order.
+	> 
+	> TCP is a transport-layer protocol designed to ensure reliable communication between two devices.  
+	> Its operation is based on the following mechanisms:
+	> 
+	> 1. **Connection establishment (Three-way handshake)**  
+	>    - The client sends a `SYN` message to request a connection.  
+	>    - The server replies with `SYN-ACK` to acknowledge and accept.  
+	>    - The client responds with `ACK`, and the connection is established.  
+	>    This process guarantees that both sides are ready before data transmission begins.
+	> 
+	> 2. **Data segmentation and numbering**  
+	>    - Large data is divided into smaller segments.  
+	>    - Each segment is assigned a sequence number.  
+	>    - This allows the receiver to reassemble the data in the correct order.  
+	> 
+	> 3. **Acknowledgments (ACKs)**  
+	>    - For every segment received, the receiver sends back an acknowledgment.  
+	>    - If the sender does not receive an ACK, it retransmits the segment.  
+	>    This ensures that no data is lost.  
+	> 
+	> 4. **Flow control**  
+	>    - TCP uses a "window size" to control how much data can be sent before requiring an acknowledgment.  
+	>    - This prevents overwhelming the receiver.
+	> 5. **Error detection**  
+	> 
+	>    - Each segment includes a checksum.  
+	>    - If the checksum does not match, the segment is discarded and retransmitted.  
+	>    This guarantees data integrity.
+	> 6. **Connection termination**  
+	> 
+	>    - When communication ends, both sides exchange `FIN` and `ACK` messages to close the connection gracefully.  
+	>    - This ensures that all data has been delivered before the connection is released.
+	> 
+	> **Summary:**  
+	> TCP works by establishing a connection, sending data in numbered segments, waiting for acknowledgments, retransmitting lost data, and closing the connection cleanly. It guarantees that information  
+	> arrives 	complete, correct, and in order.
 
 
 - **OSI model**  

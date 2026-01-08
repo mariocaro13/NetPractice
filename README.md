@@ -232,8 +232,6 @@ Recommended documentation:
 AI tools were used during this project to:  
 - Generate theoretical explanations of networking concepts.  
 
-All AI-generated content was reviewed and fully understood before being included in the project.  
-
 ---
 
 ## 📂 Submission

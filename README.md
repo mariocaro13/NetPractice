@@ -223,8 +223,8 @@ Networking concepts studied in this project:
 Recommended documentation:  
 - [RFC 791 – Internet Protocol](https://www.rfc-editor.org/rfc/rfc791)  
 - [RFC 1180 – TCP/IP tutorial](https://www.rfc-editor.org/rfc/rfc1180)
-- [Youtube Tutprial from Thuggonaut](https://youtu.be/HQUw0CfQWAM?si=QI7vKhg9tzCQ8j9u)
-- [Youtube Tutprial from PowerCert Animated Videos](https://youtu.be/s_Ntt6eTn94?si=Ybqnw3N6bw0XEXlw)
+- [Youtube Tutorial from Thuggonaut](https://youtu.be/HQUw0CfQWAM?si=QI7vKhg9tzCQ8j9u)
+- [Youtube Tutorial from PowerCert Animated Videos](https://youtu.be/s_Ntt6eTn94?si=Ybqnw3N6bw0XEXlw)
   
 ---
 
